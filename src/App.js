@@ -24,35 +24,6 @@ function App() {
     if (snacksIsLoading || drinksIsLoading) {
       return <p>Loading &hellip;</p>;
     }
-  // const [snacksIsLoading, setSnacksIsLoading] = useState(true);
-  // const [snacks, setSnacks] = useState([]);
-
-  // useEffect(() => {
-  //   async function getSnacks() {
-  //     let snacks = await SnackOrBoozeApi.getSnacks();
-  //     setSnacks(snacks);
-  //     setSnacksIsLoading(false);
-  //   }
-  //   getSnacks();
-  // }, []);
-
-  // const [drinksIsLoading, setDrinksIsLoading] = useState(true);
-  // const [drinks, setDrinks] = useState([]);
-
-  // useEffect(() => {
-  //   async function getDrinks() {
-  //     let drinks = await SnackOrBoozeApi.getDrinks();
-  //     setDrinks(drinks);
-  //     setDrinksIsLoading(false);
-  //   }
-  //   getDrinks();
-  // }, []);
-
-
-
-  // if (snacksIsLoading || snacksIsLoading) {
-  //   return <p>Loading &hellip;</p>;
-  // }
 
   return (
     <div className="App">
