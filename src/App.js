@@ -7,37 +7,50 @@ import NavBar from "./NavBar";
 import { Route, Switch } from "react-router-dom";
 import Menu from "./FoodMenu";
 import Snack from "./FoodItem";
+import useAPIData from "./hooks/useAPIData";
 
 function App() {
-  const [snacksIsLoading, setSnacksIsLoading] = useState(true);
-  const [snacks, setSnacks] = useState([]);
 
-  useEffect(() => {
-    async function getSnacks() {
-      let snacks = await SnackOrBoozeApi.getSnacks();
-      setSnacks(snacks);
-      setSnacksIsLoading(false);
+    const { isLoading: snacksIsLoading, data: snacks } = useAPIData(
+      SnackOrBoozeApi.getSnacks
+    );
+  
+    const { isLoading: drinksIsLoading, data: drinks } = useAPIData(
+      SnackOrBoozeApi.getDrinks
+    );
+  
+    if (snacksIsLoading || drinksIsLoading) {
+      return <p>Loading &hellip;</p>;
     }
-    getSnacks();
-  }, []);
+  // const [snacksIsLoading, setSnacksIsLoading] = useState(true);
+  // const [snacks, setSnacks] = useState([]);
 
-  const [drinksIsLoading, setDrinksIsLoading] = useState(true);
-  const [drinks, setDrinks] = useState([]);
+  // useEffect(() => {
+  //   async function getSnacks() {
+  //     let snacks = await SnackOrBoozeApi.getSnacks();
+  //     setSnacks(snacks);
+  //     setSnacksIsLoading(false);
+  //   }
+  //   getSnacks();
+  // }, []);
 
-  useEffect(() => {
-    async function getDrinks() {
-      let drinks = await SnackOrBoozeApi.getDrinks();
-      setDrinks(drinks);
-      setDrinksIsLoading(false);
-    }
-    getDrinks();
-  }, []);
+  // const [drinksIsLoading, setDrinksIsLoading] = useState(true);
+  // const [drinks, setDrinks] = useState([]);
+
+  // useEffect(() => {
+  //   async function getDrinks() {
+  //     let drinks = await SnackOrBoozeApi.getDrinks();
+  //     setDrinks(drinks);
+  //     setDrinksIsLoading(false);
+  //   }
+  //   getDrinks();
+  // }, []);
 
 
 
-  if (snacksIsLoading || snacksIsLoading) {
-    return <p>Loading &hellip;</p>;
-  }
+  // if (snacksIsLoading || snacksIsLoading) {
+  //   return <p>Loading &hellip;</p>;
+  // }
 
   return (
     <div className="App">
