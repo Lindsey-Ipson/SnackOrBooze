@@ -67,8 +67,13 @@ function App() {
               <Menu type="snacks" items={snacks} title="Snacks" />
             </Route>
             <Route path="/snacks/:id">
-              {/* <Snack items={snacks} cantFind="/snacks" /> */}
               <MenuItem itemsToSearch={snacks} cantFind="/snacks" />
+            </Route>
+            <Route exact path="/drinks">
+              <Menu type="drinks" items={drinks} title="Drinks" />
+            </Route>
+            <Route path="/drinks/:id">
+              <MenuItem itemsToSearch={drinks} cantFind="/drinks" />
             </Route>
             <Route>
               <p>Hmmm. I can't seem to find what you want.</p>
