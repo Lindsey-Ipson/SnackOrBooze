@@ -7,9 +7,9 @@
 .AddItemForm label {
   display: block;
   margin-bottom: 5px;
-  color: white; /* Set text color to white */
+  color: white;
   font-size: 1.3rem;
-  text-shadow: 3px 3px 5px rgb(0, 0, 0); /* Add a slight shadow */
+  text-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
 .AddItemForm input {

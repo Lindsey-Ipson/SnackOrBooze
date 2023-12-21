@@ -10,14 +10,12 @@ const NewMenuItemForm = ({ addItem, type }) => {
   };
   const [formData, setFormData] = useState(INITIAL_STATE);
 
-  /** Send new item info to parent and clear form. */
   const handleSubmit = evt => {
     evt.preventDefault();
     addItem(formData, type);
     setFormData(INITIAL_STATE);
   };
 
-  /** Update local state with current state of input element */
   const handleChange = evt => {
     const { name, value }= evt.target;
     setFormData(formData => ({

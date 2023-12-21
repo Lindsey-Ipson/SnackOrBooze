@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import SnackOrBoozeApi from "../Api";
 
 function useAPIData(apiFunction) {
   const [isLoading, setIsLoading] = useState(true);
