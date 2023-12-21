@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./AddItemForm.css";
 
 const NewMenuItemForm = ({ addItem, type }) => {
   const INITIAL_STATE = {
@@ -26,7 +27,7 @@ const NewMenuItemForm = ({ addItem, type }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="AddItemForm">
       <label htmlFor="name">Name:</label>
       <input
         id="name"

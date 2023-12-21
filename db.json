@@ -34,6 +34,13 @@
       "recipe": "cold water, squeeze of lemon, mint leaf, ice",
       "serve": "serve in tall glass with paper straw",
       "id": "Nqd_r-c"
+    },
+    {
+      "name": "pink lemonade",
+      "description": "a sweet and tangy refreshing beverage",
+      "recipe": "cold water, squeeze of lemon, mint leaf, ice",
+      "serve": "serve in tall glass with paper straw",
+      "id": "lWno0rx"
     }
   ],
   "snacks": [
@@ -64,6 +71,13 @@
       "recipe": "bread raw chicken pieces then bake on 450 for 20 minutes",
       "serve": "serve on platter with dipping sauces of choice",
       "id": "VXy8r8_"
+    },
+    {
+      "name": "dino nuggets",
+      "description": "tender white dino-shaped meat chicken nuggets",
+      "recipe": "bread raw chicken pieces then bake on 450 for 20 minutes",
+      "serve": "serve on platter with dipping sauces of choice",
+      "id": "5OVb7HF"
     }
   ]
 }
