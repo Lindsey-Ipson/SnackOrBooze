@@ -7,7 +7,8 @@ import NavBar from "./NavBar";
 import { Route, Switch } from "react-router-dom";
 // import Menu from "./FoodMenu";
 import Menu from "./Menu";
-import Snack from "./FoodItem";
+// import Snack from "./FoodItem";
+import MenuItem from "./MenuItem";
 import useAPIData from "./hooks/useAPIData";
 
 function App() {
@@ -66,7 +67,8 @@ function App() {
               <Menu type="snacks" items={snacks} title="Snacks" />
             </Route>
             <Route path="/snacks/:id">
-              <Snack items={snacks} cantFind="/snacks" />
+              {/* <Snack items={snacks} cantFind="/snacks" /> */}
+              <MenuItem itemsToSearch={snacks} cantFind="/snacks" />
             </Route>
             <Route>
               <p>Hmmm. I can't seem to find what you want.</p>

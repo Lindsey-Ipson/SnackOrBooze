@@ -10,13 +10,13 @@ import {
   ListGroupItem
 } from "reactstrap";
 
-function Menu({ type, items }) {
+function Menu({ type, items, title }) {
   return (
     <section className="col-md-4">
       <Card>
         <CardBody>
           <CardTitle className="font-weight-bold text-center">
-            {type} Menu
+            {title} Menu
           </CardTitle>
           <CardText>
             Some quick example text to build on the card title and make up the
