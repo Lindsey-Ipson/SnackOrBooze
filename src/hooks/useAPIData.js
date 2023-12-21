@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import SnackOrBoozeApi from "../Api";
 
-function useApiData(apiFunction) {
+function useAPIData(apiFunction) {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -20,7 +20,7 @@ function useApiData(apiFunction) {
     fetchData();
   }, []);
 
-  return { isLoading, data };
+  return { isLoading, data, setData };
 }
 
-export default useApiData;
+export default useAPIData;

@@ -27,6 +27,13 @@
       "description": "Crisp!",
       "recipe": "Open can.",
       "serve": "Immediately."
+    },
+    {
+      "name": "lemonade",
+      "description": "a sweet and tangy refreshing beverage",
+      "recipe": "cold water, squeeze of lemon, mint leaf, ice",
+      "serve": "serve in tall glass with paper straw",
+      "id": "Nqd_r-c"
     }
   ],
   "snacks": [
@@ -50,6 +57,13 @@
       "description": "Tart and delicious.",
       "recipe": "Mix arugula, toasted walnuts, and thinly-sliced Parmesan cheese. Dress with lemon and olive oil.",
       "serve": "Place on tiny, precious little plates."
+    },
+    {
+      "name": "chicken nuggets",
+      "description": "tender white meat chicken nuggets",
+      "recipe": "bread raw chicken pieces then bake on 450 for 20 minutes",
+      "serve": "serve on platter with dipping sauces of choice",
+      "id": "VXy8r8_"
     }
   ]
 }

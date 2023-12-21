@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NewMenuItemForm = ({ addItem }) => {
+const NewMenuItemForm = ({ addItem, type }) => {
   const INITIAL_STATE = {
     "name": "",
     "description": "",
@@ -12,11 +12,11 @@ const NewMenuItemForm = ({ addItem }) => {
   /** Send new item info to parent and clear form. */
   const handleSubmit = evt => {
     evt.preventDefault();
-    addItem(formData);
+    addItem(formData, type);
     setFormData(INITIAL_STATE);
   };
 
-  /** Update local state w/curr state of input elem */
+  /** Update local state with current state of input element */
   const handleChange = evt => {
     const { name, value }= evt.target;
     setFormData(formData => ({

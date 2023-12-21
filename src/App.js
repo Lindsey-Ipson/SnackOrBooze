@@ -10,20 +10,30 @@ import Menu from "./Menu";
 // import Snack from "./FoodItem";
 import MenuItem from "./MenuItem";
 import useAPIData from "./hooks/useAPIData";
+import AddItemForm from "./AddItemForm";
 
 function App() {
 
-    const { isLoading: snacksIsLoading, data: snacks } = useAPIData(
+    const { isLoading: snacksIsLoading, data: snacks, setData: setSnacks } = useAPIData(
       SnackOrBoozeApi.getSnacks
     );
   
-    const { isLoading: drinksIsLoading, data: drinks } = useAPIData(
+    const { isLoading: drinksIsLoading, data: drinks, setData: setDrinks } = useAPIData(
       SnackOrBoozeApi.getDrinks
     );
   
     if (snacksIsLoading || drinksIsLoading) {
       return <p>Loading &hellip;</p>;
     }
+
+    const addItem = async (item, type) => {
+      const newItem = await SnackOrBoozeApi.addItem(item, type);
+      if (type === "snacks") {
+        setSnacks(snacks => [...snacks, newItem]);
+      } else {
+        setDrinks(drinks => [...drinks, newItem]);
+      }
+    };
 
   return (
     <div className="App">
@@ -37,11 +47,17 @@ function App() {
             <Route exact path="/snacks">
               <Menu type="snacks" items={snacks} title="Snacks" />
             </Route>
+            <Route exact path="/snacks/add">
+              <AddItemForm addItem={addItem} type="snacks" />
+            </Route>
             <Route path="/snacks/:id">
               <MenuItem itemsToSearch={snacks} cantFind="/snacks" />
             </Route>
             <Route exact path="/drinks">
               <Menu type="drinks" items={drinks} title="Drinks" />
+            </Route>
+            <Route exact path="/drinks/add">
+              <AddItemForm addItem={addItem} type="drinks" />
             </Route>
             <Route path="/drinks/:id">
               <MenuItem itemsToSearch={drinks} cantFind="/drinks" />
